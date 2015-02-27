@@ -46,13 +46,26 @@
                         <tr>
                             <td style="width: 20%;" valign="top">
                                 <p:panel style="height: 480px;">
-                                    <ui:repeat var="menu" value="#{shopController.productCategoryList}">
-                                        <p:commandButton icon="#{menu.value}" value="#{menu.lableEn}"
-                                                         style="width: 100%;height: 35px;font-size: 16px;"
-                                                         action="#{shopController.findAllByCategory()}" update="@(form)">
-                                            <f:setPropertyActionListener value="#{menu.value}" target="#{shopController.productCategoryS}" />  
-                                        </p:commandButton>
-                                    </ui:repeat>
+                                    <p:commandButton icon="C001" value="#{msg['menu.c001']}"
+                                                     style="width: 100%;height: 35px;font-size: 15px;"
+                                                     action="#{shopController.findAllByCategory()}" update="@(form)">
+                                        <f:setPropertyActionListener value="C001" target="#{shopController.productCategoryS}" />  
+                                    </p:commandButton>
+                                    <p:commandButton icon="C002" value="#{msg['menu.c002']}"
+                                                     style="width: 100%;height: 35px;font-size: 15px;"
+                                                     action="#{shopController.findAllByCategory()}" update="@(form)">
+                                        <f:setPropertyActionListener value="C002" target="#{shopController.productCategoryS}" />  
+                                    </p:commandButton>
+                                    <p:commandButton icon="C003" value="#{msg['menu.c003']}"
+                                                     style="width: 100%;height: 35px;font-size: 15px;"
+                                                     action="#{shopController.findAllByCategory()}" update="@(form)">
+                                        <f:setPropertyActionListener value="C003" target="#{shopController.productCategoryS}" />  
+                                    </p:commandButton>
+                                    <p:commandButton icon="C004" value="#{msg['menu.c004']}"
+                                                     style="width: 100%;height: 35px;font-size: 15px;"
+                                                     action="#{shopController.findAllByCategory()}" update="@(form)">
+                                        <f:setPropertyActionListener value="C004" target="#{shopController.productCategoryS}" />  
+                                    </p:commandButton>
                                 </p:panel>
                             </td>
                             <td valign="top">
@@ -62,7 +75,7 @@
                                             <ui:repeat var="headDetail" value="#{head.list}">
                                                 <td>
                                                     <p:panel style="width: 225px;height: 260px;text-align: center;margin-right: 2px;margin-bottom: 2px;">
-                                                        <p:graphicImage value="#{headDetail.imgPath}" style="width: 120px;" cache="false"/>
+                                                        <p:graphicImage value="#{headDetail.imgPath}" style="width: 120px;height: 120px;" cache="false"/>
                                                         <br/>
                                                         <h:panelGroup layout="block" style="width: 100%;height: 50px;">
                                                             <h:outputLabel value="#{headDetail.productDetail.productName}" styleClass="lbl_bold"/>

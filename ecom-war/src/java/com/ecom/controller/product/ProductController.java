@@ -99,6 +99,7 @@ public class ProductController extends MethodController implements Serializable 
                 ProductStatus item = (ProductStatus) proStatusList.get(i);
                 productStatusList.add(new SelectItem(item.getStatusCode(), item.getStatusDescEn()));
             }
+            productCategoryS = "C001";
             findAll();
         } catch (Exception ex) {
             //Root cause
@@ -304,12 +305,18 @@ public class ProductController extends MethodController implements Serializable 
                 proDetail.setProductDesc(productDesc);
                 if (StringUtil.isNotNullOrNotEmpty(productCategory)) {
                     proDetail.setProductCategory(new ProductCategory(productCategory));
+                }else {
+                    proDetail.setProductCategory(new ProductCategory());
                 }
                 if (StringUtil.isNotNullOrNotEmpty(productType)) {
                     proDetail.setProductType(new ProductType(productType));
+                }else {
+                    proDetail.setProductType(new ProductType());
                 }
                 if (StringUtil.isNotNullOrNotEmpty(productStatus)) {
                     proDetail.setProductStatus(new ProductStatus(productStatus));
+                }else {
+                    proDetail.setProductStatus(new ProductStatus());
                 }
                 proDetail.setProductCost(productCost);
                 proDetail.setProductDiscount(productDiscount);
@@ -331,12 +338,18 @@ public class ProductController extends MethodController implements Serializable 
                 proDetail.setProductDesc(productDesc);
                 if (StringUtil.isNotNullOrNotEmpty(productCategory)) {
                     proDetail.setProductCategory(new ProductCategory(productCategory));
+                }else {
+                    proDetail.setProductCategory(new ProductCategory());
                 }
                 if (StringUtil.isNotNullOrNotEmpty(productType)) {
                     proDetail.setProductType(new ProductType(productType));
+                }else {
+                    proDetail.setProductType(new ProductType());
                 }
                 if (StringUtil.isNotNullOrNotEmpty(productStatus)) {
                     proDetail.setProductStatus(new ProductStatus(productStatus));
+                }else {
+                    proDetail.setProductStatus(new ProductStatus());
                 }
                 proDetail.setProductCost(productCost);
                 proDetail.setProductDiscount(productDiscount);

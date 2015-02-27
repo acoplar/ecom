@@ -94,7 +94,7 @@ public class ShopController extends MethodController implements Serializable {
 
             macAddress = MacAddressUtil.getMacAddressClient();
             order = new DataTableBean();
-            productCategoryS = "";
+            productCategoryS = "C001";
             productCategoryList = new ArrayList<DataTableBean>();
             List<ProductCategory> proCategoryList = productFacade.findAllProductCategory();
             for (int i = 0; i < proCategoryList.size(); i++) {
@@ -339,7 +339,12 @@ public class ShopController extends MethodController implements Serializable {
 //            }
             ///////////////////////////
             dataList = new ArrayList<DataTableBean>();
-            List<ProductDetail> proList = productFacade.findListByCriSearch(productNameS);
+            List<ProductDetail> proList = new ArrayList<ProductDetail>();
+            if (StringUtil.isNotNullOrNotEmpty(productNameS)){
+                proList = productFacade.findListProductDetailByCri(productCategoryS, null, null, null, null);
+            }else {
+                proList = productFacade.findListByCriSearch(productNameS);
+            }
             List<DataTableBean> d = new ArrayList<DataTableBean>();
             DataTableBean hh;
             for (int i = 1; i <= proList.size(); i++) {
@@ -393,7 +398,8 @@ public class ShopController extends MethodController implements Serializable {
 //                dataList.add(bean);
 //            }
             dataList = new ArrayList<DataTableBean>();
-            List<ProductDetail> proList = productFacade.findListProductDetailByCri(productCategoryS, null, null, productNameS, null);
+            productNameS = "";
+            List<ProductDetail> proList = productFacade.findListProductDetailByCri(productCategoryS, null, null, null, null);
             List<DataTableBean> d = new ArrayList<DataTableBean>();
             DataTableBean hh;
             for (int i = 1; i <= proList.size(); i++) {

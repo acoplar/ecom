@@ -50,6 +50,7 @@ public class ProductDetailDAO extends AbstractFacade<ProductDetail> implements P
         if (StringUtil.isNotNullOrNotEmpty(productDesc)) {
             sb.append("and o.productDesc like '%").append(productDesc).append("%' ");
         }
+        System.out.println(sb.toString());
         Query q = em.createQuery(sb.toString());
         return q.getResultList();
     }
