@@ -1,0 +1,38 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:pe="http://primefaces.org/ui/extensions"
+                xmlns:h="http://java.sun.com/jsf/html">
+
+    <h:form id="header_form">
+        <div id="top-container">
+            <div id="top-content-wrapper">
+                <div id="logo">
+                    <p:graphicImage value="./resources/images/logo.jpg"/>
+                </div>
+                <div id="user-profile">
+                    <ul>
+                        <li>
+                            <h:panelGrid columns="2" cellpadding="1" cellspacing="1">
+                                <p:commandLink id="flag_cml_en" actionListener="#{localeController.changeLocale('en')}" title="ภาษาอังกฤษ" ajax="false" disabled="#{facesContext.viewRoot.locale.language eq 'en'}" update="@(form)">
+                                    <p:graphicImage value="./resources/images/flag_en.png" style="border: 0px;"/>
+                                </p:commandLink>
+                                <p:commandLink id="flag_cml_th" actionListener="#{localeController.changeLocale('th')}" title="Thai language" ajax="false" disabled="#{facesContext.viewRoot.locale.language eq 'th'}" update="@(form)">
+                                    <p:graphicImage value="./resources/images/flag_th.png" style="border: 0px;"/>
+                                </p:commandLink>
+                            </h:panelGrid>
+                        </li>
+                        <li class="sap">|</li>
+                        <li class="cal">
+                            <h:outputText value="#{localeController.currentDt}">
+                                <f:convertDateTime pattern="EEEE, dd MMM yyyy"/> 
+                            </h:outputText>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </h:form>
+
+</ui:composition>

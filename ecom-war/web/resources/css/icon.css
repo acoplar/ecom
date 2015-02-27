@@ -1,0 +1,106 @@
+@charset "UTF-8";
+
+.icon-btn-ok{
+    background-image: url('../images/icon/ok.png')!important;margin-right:3px
+}
+
+.icon-btn-cancel{
+    background-image: url('../images/icon/cancel.png')!important;margin-right:3px
+}
+
+.icon-btn-edit{
+    background-image: url('../images/icon/editl.png')!important;margin-right:3px
+}
+
+.icon-logout{
+    background-image: url('../images/icon/logout.png')!important;margin-right:3px
+}
+
+.icon-user-profile{
+    background-image: url('../images/icon/user.png')!important;margin-right:3px
+}
+
+.icon-btn-save{
+    background-image: url('../images/icon/disk.png')!important;margin-right:3px
+}
+
+.icon-btn-help{
+    background-image: url('../images/icon/help.png')!important;margin-right:3px
+}
+
+.icon-btn-add{
+    background-image: url('../images/icon/plus.png')!important;margin-right:3px
+}
+
+.icon-btn-calc{
+    background-image: url('../images/icon/calculator.png')!important;margin-right:3px
+}
+
+.icon-btn-search{
+    background-image: url('../images/icon/find.png')!important;margin-right:3px
+}
+
+.icon-btn-report{
+    background-image: url('../images/icon/report.png')!important;margin-right:3px
+}
+
+.icon-btn-delete{
+    background-image: url('../images/icon/bin_closed.png')!important;margin-right:3px
+}
+
+.icon-btn-detail{
+    background-image: url('../images/icon/folder-open-16.png')!important;margin-right:3px
+}
+
+.icon-btn-pdf{
+    background-image: url('../images/icon/doc_pdf.png')!important;margin-right:3px
+}
+
+.icon-btn-next{
+    background-image: url('../images/icon/doc_page.png')!important;margin-right:3px
+}
+
+.icon-btn-previous{
+    background-image: url('../images/icon/doc_page_previous.png')!important;margin-right:3px
+}
+
+.icon-btn-invoice{
+    background-image: url('../images/icon/archives.png')!important;margin-right:3px
+}
+
+.icon-btn-upload{
+    background-image: url('../images/icon/upload.png')!important;margin-right:3px
+}
+
+.icon-home{
+    background-image: url('../images/icon/home.png')!important;margin-right:3px;width: 22px;height: 22px;
+}
+
+.icon-product{
+    background-image: url('../images/icon/product.png')!important;margin-right:3px;width: 22px;height: 22px;
+}
+
+.icon-purchase{
+    background-image: url('../images/icon/purchase.png')!important;margin-right:3px;width: 22px;height: 22px;
+}
+
+.icon-invoices{
+    background-image: url('../images/icon/invoices.png')!important;margin-right:3px;width: 22px;height: 22px;
+}
+
+.C001{
+    background-image: url('../images/icon/C001.png')!important;width: 22px;height: 22px;
+}
+.C002{
+    background-image: url('../images/icon/C002.png')!important;width: 22px;height: 22px;
+}
+.C003{
+    background-image: url('../images/icon/C003.png')!important;width: 22px;height: 22px;
+}
+.C004{
+    background-image: url('../images/icon/C004.png')!important;width: 22px;height: 22px;
+}
+.shop{
+    background-image: url('../images/icon/shop.png')!important;
+}
+

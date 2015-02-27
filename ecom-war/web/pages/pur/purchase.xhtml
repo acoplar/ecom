@@ -1,0 +1,139 @@
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:p="http://primefaces.org/ui">
+
+    <p:breadCrumb>
+        <p:menuitem value="#{msg['menu.home']}" icon="icon-home" actionListener="#{navigationController.nextPage('main', '')}" update="@(form)" global="false"/>
+        <p:menuitem value="#{msg['menu.purchase']}" disabled="true"/>
+    </p:breadCrumb>
+    <p:panel id="content-search" styleClass="margin" style="margin-top: 2px;">
+        <h:panelGrid columns="6" style="width: 100%">
+            <h:outputLabel value="#{lb['purchaseCode']}" styleClass="lbl_bold"/>
+            <p:inputText value="#{purchaseController.purchaseCodeS}"/>
+            <h:outputLabel value="#{lb['customerName']}" styleClass="lbl_bold"/>
+            <p:inputText value="#{purchaseController.customerNameS}"/>
+            <h:outputLabel value="#{lb['mobile']}" styleClass="lbl_bold"/>
+            <p:inputText value="#{purchaseController.customerMobileS}"/>
+            <h:outputLabel value="#{lb['dateFrom']}" styleClass="lbl_bold"/>
+            <p:calendar value="#{purchaseController.dateFromS}" navigator="true" size="12" showOn="button" pattern="dd/MM/yyyy"/>    
+            <h:outputLabel value="#{lb['dateTo']}" styleClass="lbl_bold"/>
+            <p:calendar value="#{purchaseController.dateToS}" navigator="true" size="12" showOn="button" pattern="dd/MM/yyyy"/>    
+            <h:outputText />
+            <p:commandButton value="#{msg['btn.search']}" icon="icon-btn-search" action="#{purchaseController.findAll()}" update="@(form)"/>
+        </h:panelGrid>
+    </p:panel>
+    <p:panel id="content-layout" styleClass="margin">
+        <p:dataTable var="item" value="#{purchaseController.dataList}" binding="#{datatableController.defaultDataTable}" emptyMessage="">
+            <p:column headerText="#{lb['no']}" style="text-align: center;width: 2%">
+                <h:outputText value="#{item.seq}" />
+            </p:column>
+            <p:column headerText="#{lb['purchaseCode']}" sortBy="#{item.purchase.purchaseCode}" style="width: 10%;text-align: center;">
+                <h:outputText value="#{item.purchase.purchaseCode}" />
+            </p:column>
+            <p:column headerText="#{lb['customerName']}" sortBy="#{item.purchase.customerName}" style="width: 12%;">
+                <h:outputText value="#{item.purchase.customerName}" />
+            </p:column>
+            <p:column headerText="#{lb['address']}" >
+                <h:outputText value="#{item.purchase.customerAddress}" />
+            </p:column>
+            <p:column headerText="#{lb['mobile']}" style="width: 8%;text-align: center;">
+                <h:outputText value="#{item.purchase.customerMobile}" />
+            </p:column>
+            <p:column headerText="#{lb['totalItem']}" style="width: 6%;text-align: right;">
+                <h:outputText value="#{item.purchase.totalItem}" >
+                    <f:convertNumber pattern="#,##0"/>
+                </h:outputText>
+            </p:column>
+            <p:column headerText="#{lb['totalPrice']}" style="width: 8%;text-align: right;">
+                <h:outputText value="#{item.purchase.totalPrice}">
+                    <f:convertNumber pattern="#,##0.00"/>
+                </h:outputText>
+            </p:column>
+            <p:column headerText="#{lb['purchaseDate']}" sortBy="#{item.purchase.createDt}" style="width: 10%;text-align: center;">
+                <h:outputText value="#{item.purchase.createDt}" >
+                    <f:convertDateTime pattern="dd/MM/yyyy HH:mm"/>
+                </h:outputText>
+            </p:column>
+            <p:column headerText="" style="text-align: center;width: 7%">
+                <p:commandButton icon="icon-btn-invoice" action="#{purchaseController.find()}" title="#{lb['invoiceNo']}" oncomplete="purchase_dialog.show()" update="@(form)" >
+                    <f:setPropertyActionListener value="#{item.purchase.purchaseCode}" target="#{purchaseController.purchaseCode}" />  
+                </p:commandButton>
+                <p:commandButton icon="icon-btn-pdf" action="#{purchaseController.reportPDF()}" title="#{msg['btn.print']}" update="@(form)" ajax="false">
+                    <f:setPropertyActionListener value="#{item.purchase.purchaseCode}" target="#{purchaseController.purchaseCode}" />  
+                </p:commandButton>
+            </p:column>
+            <f:facet name="footer" >
+                <h:outputText value="Rows #{purchaseController.dataList.size()}" />
+            </f:facet>
+        </p:dataTable>
+    </p:panel>
+    <p:dialog header="#{msg['menu.purchase']}" widgetVar="purchase_dialog" resizable="false" id="purchase_Dlg"  
+              height="450" width="1200" modal="true">
+        <h:panelGrid columns="6" style="width: 100%;">
+            <h:outputLabel value="#{lb['purchaseCode']}" styleClass="lbl_bold"/>
+            <h:outputLabel value="#{purchaseController.detail.purchaseCode}"/>
+            <h:outputLabel value="#{lb['customerName']}" styleClass="lbl_bold"/>
+            <h:outputLabel value="#{purchaseController.detail.customerName}"/>
+            <h:outputLabel value="#{lb['mobile']}" styleClass="lbl_bold"/>
+            <h:outputLabel value="#{purchaseController.detail.customerMobile}"/>
+
+            <h:outputLabel value="#{lb['address']}" styleClass="lbl_bold"/>
+            <h:outputLabel value="#{purchaseController.detail.customerAddress}"/>
+            <h:outputLabel value="#{lb['email']}" styleClass="lbl_bold"/>
+            <h:outputLabel value="#{purchaseController.detail.customerEmail}"/>
+            <h:outputLabel value="#{lb['purchaseDate']}" styleClass="lbl_bold"/>
+            <h:outputLabel value="#{purchaseController.detail.createDt}">
+                <f:convertDateTime pattern="dd/MM/yyyy HH:mm"/>
+            </h:outputLabel>
+            
+            <h:outputLabel />
+            <h:outputLabel />
+            <h:outputLabel />
+            <h:outputLabel />
+            <p:selectBooleanCheckbox value="#{purchaseController.payStatus}" itemLabel="#{lb['paymentStatus']}" styleClass="lbl_bold"/>
+            <p:selectBooleanCheckbox value="#{purchaseController.invoiceFlag}" itemLabel="#{lb['invoiceNo']}" styleClass="lbl_bold"/>
+        </h:panelGrid>
+        <p:panel styleClass="margin" style="margin-top: 4px;">
+            <p:dataTable var="purchaseDetail" value="#{purchaseController.detail.purchaseDetailList}" emptyMessage="">
+                <p:column headerText="#{lb['productCode']}" style="width: 15%;text-align: center;">
+                    <h:outputText value="#{purchaseDetail.productDetail.productCode}" />
+                </p:column>
+                <p:column headerText="#{lb['productName']}" >
+                    <h:outputText value="#{purchaseDetail.productDetail.productName}" />
+                </p:column>
+                <p:column headerText="#{lb['productPrice']}" style="width: 10%;text-align: right;">
+                    <h:outputText value="#{purchaseDetail.productPrice}" >
+                        <f:convertNumber pattern="#,##0.00"/>
+                    </h:outputText>
+                </p:column>
+                <p:column headerText="#{lb['qty']}" style="width: 10%;text-align: right;">
+                    <h:outputText value="#{purchaseDetail.productQty}" >
+                        <f:convertNumber pattern="#,##0"/>
+                    </h:outputText>
+                    <f:facet name="footer">
+                        <h:outputText value="#{purchaseController.detail.totalItem}" style="color: red;">
+                            <f:convertNumber pattern="#,##0"/>
+                        </h:outputText>
+                    </f:facet>
+                </p:column>
+                <p:column headerText="#{lb['total']}" style="width: 10%;text-align: right;">
+                    <h:outputText value="#{purchaseDetail.productTotal}" >
+                        <f:convertNumber pattern="#,##0.00"/>
+                    </h:outputText>
+                    <f:facet name="footer">
+                        <h:outputText value="#{purchaseController.detail.totalPrice}" style="color: red;">
+                            <f:convertNumber pattern="#,##0.00"/>
+                        </h:outputText>
+                    </f:facet>
+                </p:column>
+            </p:dataTable>
+        </p:panel>
+        <f:facet name="footer">
+            <h:panelGroup layout="block" style="text-align: center">
+                <p:commandButton value="#{msg['btn.save']}" icon="icon-btn-save" action="#{purchaseController.update}" update="@(form)"/>
+                <p:commandButton value="#{msg['btn.cancel']}" icon="icon-cancel" oncomplete="purchase_dialog.hide();" global="false"/>
+            </h:panelGroup>
+        </f:facet>
+    </p:dialog>
+</ui:composition>

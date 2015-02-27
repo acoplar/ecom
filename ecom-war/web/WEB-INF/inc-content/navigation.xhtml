@@ -1,0 +1,14 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:h="http://java.sun.com/jsf/html">
+
+    <h:form id="navigation_form">
+        <p:menubar style="font-size: 12px; padding:0px;border:0px;" autoDisplay="false">
+            <p:menuitem icon="icon-home" value="#{msg['menu.home']}" actionListener="#{navigationController.nextPage('main', '')}" update="@(form)" global="false"/>
+            <p:menuitem icon="icon-product" value="#{msg['menu.product']}" actionListener="#{navigationController.nextPage('pro/product', '')}" update="@(form)" global="false"/>
+            <p:menuitem icon="icon-purchase" value="#{msg['menu.purchase']}" actionListener="#{navigationController.nextPage('pur/purchase', '')}" update="@(form)" global="false"/>
+            <p:menuitem icon="icon-invoices" value="#{msg['menu.invoice']}" actionListener="#{navigationController.nextPage('inv/invoice', '')}" update="@(form)" global="false"/>
+        </p:menubar>
+    </h:form>
+</ui:composition>

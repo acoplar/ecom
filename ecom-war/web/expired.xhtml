@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>
+            <h:outputText value="Client Timeout" />
+        </title>
+        <link href="#{request.contextPath}/resources/css/default.css" rel="stylesheet" type="text/css" />
+    </h:head>
+    <h:body>
+        <h:form id="status_expire">
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/><center>
+                <p:panel header="HTTP ERROR EXPIRE" style="width: 50%;text-align: center;">
+                    We are sorry, but you are not authorized to view this page.
+                    Please return to the  page.
+                    Thank you.
+                    <f:facet name="footer">
+                        <h:panelGroup layout="block" style="text-align: center">
+                            <p:commandButton value="back" icon="ui-icon-home" action="#{authenticationController.logout}"/>
+                        </h:panelGroup>
+                    </f:facet>
+                </p:panel>
+            </center>
+        </h:form>
+
+    </h:body>
+</html>

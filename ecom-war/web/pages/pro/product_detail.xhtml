@@ -1,0 +1,54 @@
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:pe="http://primefaces.org/ui/extensions"
+                xmlns:p="http://primefaces.org/ui">
+
+    <p:breadCrumb>
+        <p:menuitem value="#{msg['menu.home']}" icon="icon-home" actionListener="#{navigationController.nextPage('main', '')}" update="@(form)" global="false"/>
+        <p:menuitem value="#{msg['menu.product']}" actionListener="#{navigationController.nextPage('pro/product', '')}" update="@(form)" global="false"/>
+        <p:menuitem value="#{msg['menu.product']}" disabled="true"/>
+    </p:breadCrumb>
+    <p:panel id="content-layout" styleClass="margin">
+        <h:panelGrid columns="2" style="width: 100%;">
+            <h:panelGrid columns="2" style="width: 100%;">
+                <h:outputText value="#{lb['productCode']}" styleClass="lbl_bold" />
+                <p:inputText value="#{productController.productCode}" styleClass="readonly" readonly="true"/>
+                <h:outputText value="#{lb['productName']}" styleClass="lbl_bold"/>
+                <p:inputTextarea value="#{productController.productName}" styleClass="mandatory" cols="50" rows="4"/>
+                <h:outputText value="#{lb['productDesc']}" styleClass="lbl_bold"/>
+                <p:inputTextarea value="#{productController.productDesc}" cols="50" rows="8"/>
+                <h:outputText value="#{lb['productCategory']}" styleClass="lbl_bold"/>
+                <p:selectOneMenu  value="#{productController.productCategory}" styleClass="mandatory" style="width: 300px;">  
+                    <f:selectItems value="#{productController.productCategoryList}" />  
+                </p:selectOneMenu> 
+                <h:outputText value="#{lb['productType']}" styleClass="lbl_bold"/>
+                <p:selectOneMenu  value="#{productController.productType}" style="width: 300px;">  
+                    <f:selectItems value="#{productController.productTypeList}" />  
+                </p:selectOneMenu> 
+                <h:outputText value="#{lb['productStatus']}" styleClass="lbl_bold"/>
+                <p:selectOneMenu  value="#{productController.productStatus}" styleClass="mandatory" style="width: 300px;">  
+                    <f:selectItems value="#{productController.productStatusList}" />  
+                </p:selectOneMenu> 
+                <h:outputText value="#{lb['productPrice']}" styleClass="lbl_bold"/>
+                <pe:inputNumber id="proCost" value="#{productController.productCost}" styleClass="mandatory" style="text-align: right;width: 100px;"> 
+                    <p:ajax event="blur" update="proCost" partialSubmit="false" global="false"/>  
+                </pe:inputNumber>
+                <h:outputText value="#{lb['productDiscount']}" styleClass="lbl_bold"/>
+                <pe:inputNumber id="proDiscount" value="#{productController.productDiscount}" decimalPlaces="0" style="text-align: right;width: 100px;"> 
+                    <p:ajax event="blur" update="proDiscount" partialSubmit="false" global="false"/>  
+                </pe:inputNumber>
+            </h:panelGrid>
+            <h:panelGroup layout="block" style="text-align: center;">
+                <h:graphicImage value="#{productController.imgPath}" style="width: 300px;height: 300px;"/>
+                <br/>
+                <p:commandButton value="#{msg['btn.editImage']}" icon="icon-btn-edit" action="#{productController.updateTemp()}" update="@(form)"/>
+            </h:panelGroup>
+        </h:panelGrid>
+        <br/>
+        <h:panelGroup layout="block" style="text-align: center;">
+            <p:commandButton value="#{msg['btn.save']}" icon="icon-btn-save" action="#{productController.update()}" update="@(form)"/>
+            <p:commandButton value="#{msg['btn.cancel']}" icon="icon-btn-cancel" action="#{navigationController.nextPage('pro/product', '')}" update="@(form)" global="false"/>
+        </h:panelGroup> 
+    </p:panel>
+</ui:composition>

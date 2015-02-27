@@ -1,0 +1,54 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:pe="http://primefaces.org/ui/extensions"
+                xmlns:h="http://java.sun.com/jsf/html">
+
+    <h:form id="header_form">
+        <div id="top-container">
+            <div id="top-content-wrapper">
+                <div id="logo">
+                    <p:graphicImage value="./resources/images/logo.jpg"/>
+                </div>
+                <div id="user-profile">
+                    <ul>
+                        <li>
+                            <h:panelGrid columns="2" cellpadding="1" cellspacing="1">
+                                <p:commandLink id="flag_cml_en" actionListener="#{localeController.changeLocale('en')}" title="ภาษาอังกฤษ" ajax="false" disabled="#{facesContext.viewRoot.locale.language eq 'en'}" update="@(form)">
+                                    <p:graphicImage value="./resources/images/flag_en.png" style="border: 0px;"/>
+                                </p:commandLink>
+                                <p:commandLink id="flag_cml_th" actionListener="#{localeController.changeLocale('th')}" title="Thai language" ajax="false" disabled="#{facesContext.viewRoot.locale.language eq 'th'}" update="@(form)">
+                                    <p:graphicImage value="./resources/images/flag_th.png" style="border: 0px;"/>
+                                </p:commandLink>
+                            </h:panelGrid>
+                        </li>
+                        <li class="sap">|</li>
+                        <li class="user">
+                            <p:commandLink global="false" value="#{userInfoController.username}" style="text-transform: lowercase;"/>
+                        </li>
+                        <li class="sap">|</li>
+                        <li class="cal">
+                            <h:outputText value="#{localeController.currentDt}">
+                                <f:convertDateTime pattern="EEEE, dd MMM yyyy"/> 
+                            </h:outputText>
+                        </li>
+                        <li class="sap">|</li>
+                        <li class="lockout">
+                            <p:commandLink value="#{msg['logout.btn.logout']}" global="false" onclick="sign_out_confirm.show();" title="#{msg['logout.btn.logout']}"/>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <p:confirmDialog message="#{msg['logout.confirm.detail']}"  
+                         header="#{msg['logout.confirm.title']}"
+                         widgetVar="sign_out_confirm">
+            <h:panelGroup layout="block" style="text-align: center;">
+                <p:commandButton id="confirm" icon="icon-ok" value="#{msg['logout.confirm.btn.ok']}" global="false" oncomplete="sign_out_confirm.hide();" ajax="false" actionListener="#{authenticationController.logout()}" />  
+                <p:commandButton id="cancel" icon="icon-cancel" value="#{msg['logout.confirm.btn.cancel']}" global="false" onclick="sign_out_confirm.hide();" type="button" />
+            </h:panelGroup>
+        </p:confirmDialog>
+
+    </h:form>
+</ui:composition>

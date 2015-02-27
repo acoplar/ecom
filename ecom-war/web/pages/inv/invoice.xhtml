@@ -1,0 +1,68 @@
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:p="http://primefaces.org/ui">
+
+    <p:breadCrumb>
+        <p:menuitem value="#{msg['menu.home']}" icon="icon-home" actionListener="#{navigationController.nextPage('main', '')}" update="@(form)" global="false"/>
+        <p:menuitem value="#{msg['menu.invoice']}" disabled="true"/>
+    </p:breadCrumb>
+    <p:panel id="content-search" styleClass="margin" style="margin-top: 2px;">
+        <h:panelGrid columns="6" style="width: 100%">
+            <h:outputLabel value="#{lb['invoiceNo']}" styleClass="lbl_bold"/>
+            <p:inputText value="#{invoiceController.purchaseCodeS}"/>
+            <h:outputLabel value="#{lb['customerName']}" styleClass="lbl_bold"/>
+            <p:inputText value="#{invoiceController.customerNameS}"/>
+            <h:outputLabel value="#{lb['mobile']}" styleClass="lbl_bold"/>
+            <p:inputText value="#{invoiceController.customerMobileS}"/>
+            <h:outputLabel value="#{lb['dateFrom']}" styleClass="lbl_bold"/>
+            <p:calendar value="#{invoiceController.dateFromS}" navigator="true" size="12" showOn="button" pattern="dd/MM/yyyy"/>    
+            <h:outputLabel value="#{lb['dateTo']}" styleClass="lbl_bold"/>
+            <p:calendar value="#{invoiceController.dateToS}" navigator="true" size="12" showOn="button" pattern="dd/MM/yyyy"/>    
+            <h:outputText />
+            <p:commandButton value="#{msg['btn.search']}" icon="icon-btn-search" action="#{invoiceController.findAll()}" update="@(form)"/>
+        </h:panelGrid>
+    </p:panel>
+    <p:panel id="content-layout" styleClass="margin">
+        <p:dataTable id="itemDetail" var="item" value="#{invoiceController.dataList}" binding="#{datatableController.defaultDataTable}" emptyMessage="">
+            <p:column headerText="" style="text-align: center;width: 2%">
+                <f:facet name="header">  
+                    <p:selectBooleanCheckbox value="#{invoiceController.check}"> 
+                        <p:ajax listener="#{invoiceController.selectAll()}" update="itemDetail" global="false"/>
+                    </p:selectBooleanCheckbox> 
+                </f:facet>  
+                <p:selectBooleanCheckbox value="#{item.check}" />  
+            </p:column>
+            <p:column headerText="#{lb['invoiceNo']}" style="width: 10%;text-align: center;">
+                <h:outputText value="#{item.invoice.invoiceNo}" />
+            </p:column>
+            <p:column headerText="#{lb['customerName']}" style="width: 12%;">
+                <h:outputText value="#{item.invoice.customerName}" />
+            </p:column>
+            <p:column headerText="#{lb['address']}" >
+                <h:outputText value="#{item.invoice.customerAddress}" />
+            </p:column>
+            <p:column headerText="#{lb['mobile']}" style="width: 8%">
+                <h:outputText value="#{item.invoice.customerMobile}" />
+            </p:column>
+            <p:column headerText="#{lb['totalItem']}" style="width: 8%;text-align: right;">
+                <h:outputText value="#{item.invoice.totalItem}" >
+                    <f:convertNumber pattern="#,##0"/>
+                </h:outputText>
+            </p:column>
+            <p:column headerText="#{lb['totalPrice']}" style="width: 10%;text-align: right;">
+                <h:outputText value="#{item.invoice.totalPrice}">
+                    <f:convertNumber pattern="#,##0.00"/>
+                </h:outputText>
+            </p:column>
+            <p:column headerText="" style="text-align: center;width: 2%">
+                <p:commandButton icon="icon-btn-pdf" action="#{invoiceController.reportPDF()}" title="#{msg['btn.print']}" update="@(form)" ajax="false">
+                    <f:setPropertyActionListener value="#{item.invoice.invoiceNo}" target="#{invoiceController.invoiceNo}" />  
+                </p:commandButton>
+            </p:column>
+            <f:facet name="footer" >
+                <h:outputText value="Rows #{invoiceController.dataList.size()}" />
+            </f:facet>
+        </p:dataTable>
+    </p:panel>
+</ui:composition>

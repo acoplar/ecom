@@ -1,0 +1,224 @@
+#main-container{
+}
+
+#header {
+    top: 0;
+    padding: 0px;
+    margin: 0px 0px 0px 0px;
+}
+
+#top-container {
+    margin: 0px auto;
+    height: 50px;
+    font-size:8pt;
+}
+
+#top-content-wrapper {
+    margin: 0 auto; 
+    width: 1210px;
+}
+
+#logo{
+    float:left;
+    margin-top: 0px;
+}
+
+#navigation {
+    position: relative;
+    margin-left:auto;
+    margin-right:auto;
+    padding-top: 4px;
+    width: 1210px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+#user-profile a:link, #user-profile a:visited {
+    font-weight : bold;
+    text-decoration: none;
+}
+#user-profile a:link:hover, #user-profile a:visited:hover {
+    font-weight : bold;
+    text-decoration : underline;
+}
+
+#user-profile{
+    float: right; 
+    height: 45px;
+}
+
+#user-profile ul{
+    list-style:none; 
+    margin: 0px; 
+    padding: 0px; 
+    float:right;
+}
+
+#user-profile li{
+    float: left;
+    margin-top: 5px;
+}
+
+#user-profile li.label{
+    font-weight: bold;
+}
+
+#user-profile li.user{
+    float: left;
+    font-weight: bold;
+    font-size: 14px;
+    background-image: url('../images/event_open.gif');
+    background-repeat: no-repeat;
+    background-position: left center;
+    padding: 1px 5px 0px 20px;
+    margin-top: 12px;
+}
+
+#user-profile li.cal{
+    float: left;
+    font-size: 14px;
+    background-image: url('../images/calendar.png');
+    background-repeat: no-repeat;
+    background-position: left center;
+    padding: 1px 5px 0px 20px;
+    margin-top: 12px;
+}
+
+#user-profile li.lockout{
+    float: left;
+    font-size: 14px;
+    background-image: url('../images/icon/logout.png');
+    background-repeat: no-repeat;
+    background-position: left center;
+    padding: 1px 5px 0px 20px;
+    margin-top: 12px;
+}
+
+#user-profile li.ip{
+    float: left;
+    background-image: url('../images/icon/networking.png');
+    background-repeat: no-repeat;
+    background-position: left center;
+    padding: 1px 5px 0px 20px;
+}
+
+#user-profile li.sap{
+    padding: 0px 2px 0px 2px;
+    margin-top: 14px;
+}
+
+#user-profile li.theme{
+    float: right;
+    margin-top: 14px;
+    padding: 0px;
+}
+
+#footer{
+    color: #4e6769;
+    font-size: 10px;
+    font-family: Verdana, "Verdana CE", Arial, "Arial CE", "Lucida Grande CE", lucida, "Helvetica CE", sans-serif;
+    position: relative;
+    background-color: #CCC;
+    padding-left: 8px;
+    padding-right: 8px;
+    margin-left:auto;
+    margin-right:auto;
+    width: 1190px;
+    border-radius: 5px;
+}
+
+#center-content {
+    position: relative;
+    background: #ffffff;
+    width: 1200px;
+    margin-left:auto;
+    margin-right:auto;
+    padding: 5px;
+    border-radius: 5px;
+    vertical-align: top;
+}
+
+.login-content {
+    position: relative;
+    background-position: bottom;
+    width: 1200px;
+    min-height: 500px;   
+    margin-left:auto;
+    margin-right:auto;
+    padding: 0px;
+    border-radius: 8px;
+    vertical-align: top;
+}
+
+#login-container{
+    width: 390px;
+    height: 320px;
+
+    margin-left:auto;
+    margin-right:auto;
+    /*background:url('../images/bb1.gif') repeat;*/
+    background-color: #FFFCCC;
+    padding: 5px;
+    vertical-align: top;
+    opacity:0.95;
+    filter:alpha(opacity=90);
+    box-shadow: 4px 4px 5px #999;
+    border: solid 1px #CCC;
+
+}
+
+#login-content{
+    margin-left:auto;
+    margin-right:auto;
+    margin-top: 20px;
+    width: 290px;
+    /*background-color: #ffffff;*/
+}
+
+#login-title{
+    float: left;
+    background-image: url('../images/login_logo.jpg'); 
+    background-repeat: no-repeat;
+    background-position: left top;
+    padding: 17px 5px 0px 130px;
+    width: 100%;
+    height: 120px;
+    /*background-color: #cccccc;*/
+}
+
+#login-language{
+    margin-top: 5px;
+    float: right; 
+    /*color: #d3d3d3;*/ 
+}
+
+#header-content {
+    font-size:12px;
+    font-weight: bold;
+    /*background-color: #0090F3;*/
+    margin-top: 0px;
+    margin-left: 1px;
+    margin-bottom: 5px;
+
+    padding-left:4px;
+    padding-top: 6px;
+    height: 20px;
+    /*color: #FFF;*/
+
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+
+#content-layout {
+    margin-top: 3px;
+    margin-left: 1px;
+    margin-bottom: 5px;
+
+    /*background-color: #FFF;*/
+
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}

@@ -1,0 +1,597 @@
+@charset "UTF-8";
+
+body {
+    background-color: #ffffff;
+    font-size: 12px;
+    font-family: Verdana, "Verdana CE",  Arial, "Arial CE", "Lucida Grande CE", lucida, "Helvetica CE", sans-serif;
+    /*color: #000000;*/  
+    margin: 0px;
+}
+
+h1 {
+    font-family: Arial, "Arial CE", "Lucida Grande CE", lucida, "Helvetica CE", sans-serif;
+    border-bottom: 1px solid #AFAFAF; 
+    font-size:  16px;
+    font-weight: bold;
+    margin: 0px;
+    padding: 0px;
+    /*color: #D20005;*/
+}
+
+a:link, a:visited {
+    /*font-weight : bold;*/
+    text-decoration: underline;
+}
+
+a:link:hover, a:visited:hover  {
+    /*color: #000000;*/
+    /*font-weight : bold;*/
+    /*font-size: 11px;*/
+    text-decoration : underline;
+}
+
+#top a:link, #top a:visited {
+    /*color: white;*/
+    /*font-weight : bold;*/
+    text-decoration: underline;
+}
+
+#top a:link:hover, #top a:visited:hover  {
+    /*color: black;*/
+    /*font-weight : bold;*/
+    text-decoration : underline;
+}
+
+.ui-tabs .ui-tabs-panel{
+    padding: 0.5em 0.5em;
+}
+
+.ui-datatable .ui-datatable-data .even-row td {
+    background-color:#DFDFDF;
+    border-right: solid 0px #4e6769;
+}
+
+.ui-datatable .ui-datatable-data .red-text td {
+    color: red;
+}
+
+.ui-datatable .ui-datatable-data .row-bg td {
+    background-color: #B7FF80;
+}
+
+.ui-datatable .ui-datatable-data .red-font td {
+    color: red;
+}
+
+.ui-datatable .ui-datatable-data .row-readonly-bg td {
+    background-color: #C0C0C0;
+}
+
+.ui-datatable .ui-datatable-data .row-red-font td {
+    color: red;
+}
+
+.ui-datatable .ui-datatable-data .epacIdShow-bg td {
+    background-color: #F280FF;
+}
+
+.ui-datatable .ui-datatable-data .odd-row td{ 
+    background-color:#F2F2F2;
+    border-right: solid 0px #4e6769;
+}
+
+.ui-datatable .ui-datatable-data .empty-row td{ 
+    background-color: tan;
+    border-right: solid 0px #4e6769;
+}
+
+.lbl_bold{
+    font-weight: bold;
+}
+
+.ui-panel .ui-panel-content{
+    padding-top: 1px;
+    padding-right: 1px;
+    padding-bottom: 1px;
+    padding-left: 2px;
+}
+
+.ui-datatable th div.ui-dt-c, .ui-datatable .ui-datatable-data td div.ui-dt-c, .ui-datatable .ui-datatable-data-empty td div.ui-dt-c, .ui-datatable tfoot td div.ui-dt-c{
+    padding-right: 4px;
+    padding-left: 4px;
+}
+
+.panel{
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.txt-area-box{
+    width: 360px;
+    height: 80px;
+}
+
+.txt-box{
+    width: 195px;
+}
+
+.slc-box{
+    width: 168px;
+}
+
+.ui-menubar .ui-menuitem-link {
+    /*width: auto;*/
+    padding-top : 0.2em;
+    padding-right : 2.1em;
+    padding-bottom  : 0.2em;
+    padding-left : 0em;
+
+}
+
+.ui-menubar .ui-menu-child .ui-menuitem-link {
+    width: 100%
+}
+
+/*Remove downward facing triangle from submenus*/
+.ui-menu-link > .ui-icon-triangle-1-s {
+    display: none !important;
+}
+/*Let submenu width be based on content*/
+.ui-menu .ui-menu-parent .ui-menu-child {
+    width: auto;
+    padding-right : 2.2em;
+    white-space: nowrap;
+}
+/*Prevent rightward facing icons from wrapping*/
+.ui-menu-parent > .ui-menu-link > span.ui-icon-triangle-1-e {
+    position: absolute;
+    height:16px;
+    top:50%;
+    margin-top:-8px;
+    right: -8px;
+}
+/*Make room for righward facing icons*/
+.ui-menu ul.ui-menu-child {
+    /*padding-right: 16px !important;*/
+}
+/*Set link width, which affects submenu overlap and is related to rightward facing icon padding*/
+.ui-menu-child .ui-menu-link {
+    line-height: normal;
+    padding: 0em;
+    width: 100%;
+    /*                    width: 100% !important;*/
+}
+/*Prevent menuitem icon from generating a line break. Also make room for left-side icon.  Note: we use relative parent absolute child strategy*/
+.ui-menu-child > .ui-menu-item > .ui-menu-link > .ui-menu-text {
+    position: relative !important;
+    margin-left: 16px !important;
+}
+.ui-menu-child > .ui-menu-item > .ui-menu-link > .ui-menu-text > .ui-menu-icon-left {
+    position: absolute;
+    height:16px;
+    top:50%;
+    margin-top:-8px;
+    left: -16px;
+}
+/*Set border (this is specific to black-tie theme)*/
+.ui-widget-content, .ui-menu .ui-widget-content {
+    border: 1px solid #CCCCCC;
+}
+
+
+.gpanel_col1{
+    text-align: right;
+    font-weight: bold;
+}
+.gpanel_col2{
+    text-align: left;
+}
+
+.under_line{
+    border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #000000;
+}
+
+.mandatory .ui-datepicker {
+    background-color: #FFCC99;
+}
+
+.mandatory .ui-inputfield {
+    background-color: #FFCC99;
+}
+
+.mandatory .ui-inputtext{
+    background-color: #FFCC99;
+}
+
+.mandatory {
+    background-color: #FFCC99 !important;
+}
+
+.readonly .ui-datepicker {
+    background-color: #C0C0C0;
+}
+
+
+.readonly .ui-inputfield {
+    background-color: #C0C0C0;
+}
+
+.readonly .ui-inputtext{
+    background-color: #C0C0C0;
+}
+
+.readonly {
+    background-color: #C0C0C0 !important;
+}
+
+
+.room-header-1 {
+    background-color: #FF3300 !important;
+}
+
+.room-header-4 {
+    background-color:deeppink !important;
+}
+
+.room-header-2 {
+    background-color: yellowgreen !important;
+}
+
+.room-header-3 {
+    background-color:#0090F3 !important;
+}
+
+.panel{
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; 
+    background-color: #FFCC99;
+}
+
+.line{
+    height: 1px;
+    background-color: #d3d3d3;
+}
+
+.icon-ok{
+    background-image: url('../images/icon/ok.png')!important;margin-right:3px
+}
+
+.icon-cancel{
+    background-image: url('../images/icon/cancel.png')!important;margin-right:3px
+}
+
+.icon-chg-key{
+    background-image: url('../images/icon/key.png')!important;margin-right:3px
+}
+
+.icon-edit{
+    background-image: url('../images/icon/editl.png')!important;margin-right:3px
+}
+
+.icon-logout{
+    background-image: url('../images/icon/logout.png')!important;margin-right:3px
+}
+
+.icon-person{
+    background-image: url('../images/icon/person.png')!important;margin-right:3px
+}
+
+.icon-user-profile{
+    background-image: url('../images/icon/user.png')!important;margin-right:3px
+}
+
+.icon-group{
+    background-image: url('../images/icon/group.png')!important;margin-right:3px
+}
+
+.icon-setting{
+    background-image: url('../images/icon/config.png')!important;margin-right:3px
+}
+
+.icon-save{
+    background-image: url('../images/icon/disk.png')!important;margin-right:3px
+}
+
+.icon-help{
+    background-image: url('../images/icon/help.png')!important;margin-right:3px
+}
+
+.icon-add{
+    background-image: url('../images/icon/plus.png')!important;margin-right:3px
+}
+
+.icon-calc{
+    background-image: url('../images/icon/calculator.png')!important;margin-right:3px
+}
+
+.icon-search{
+    background-image: url('../images/icon/find.png')!important;margin-right:3px
+}
+
+.icon-stock{
+    background-image: url('../images/icon/office-building.png')!important;margin-right:3px
+}
+
+.icon-archives{
+    background-image: url('../images/icon/archives.png')!important;margin-right:3px
+}
+
+.icon-fund{
+    background-image: url('../images/icon/fund.png')!important;margin-right:2px;width: 22px;height: 22px;
+}
+
+.icon-report{
+    background-image: url('../images/icon/report.png')!important;margin-right:2px;width: 22px;height: 22px;
+}
+
+.icon-schedule{
+    background-image: url('../images/icon/alarmclock.png')!important;margin-right:3px
+}
+
+.icon-delete{
+    background-image: url('../images/icon/bin_closed.png')!important;margin-right:3px
+}
+
+.icon-color{
+    background-image: url('../images/icon/control_wheel.png')!important;margin-right:3px
+}
+
+.icon-home{
+    background-image: url('../images/icon/home.png')!important;margin-right:3px;;width: 22px;height: 22px;
+}
+
+.icon-full{
+    background-image: url('../images/icon/full.png')!important;margin-right:3px
+}
+
+.icon-empty{
+    background-image: url('../images/icon/empty.png')!important;margin-right:3px
+}
+
+.icon-wait{
+    background-image: url('../images/icon/alarmclock.png')!important;margin-right:3px
+}
+
+.icon-people{
+    background-image: url('../images/icon/people.png')!important;margin-right:3px
+}
+
+.icon-refresh{
+    background-image: url('../images/icon/refresh.png')!important;margin-right:3px
+}
+
+.icon-clipboard{
+    background-image: url('../images/icon/clipboard.png')!important;margin-right:3px
+}
+
+.icon-excel{
+    background-image: url('../images/icon/page_excel.png')!important;margin-right:3px
+}
+
+.icon-folder-new-16{
+    background-image: url('../images/icon/folder-new-16.png')!important;margin-right:3px
+}
+
+.icon-folder-open-16{
+    background-image: url('../images/icon/folder-open-16.png')!important;margin-right:3px
+}
+
+.icon-detail{
+    background-image: url('../images/icon/folder-open-16.png')!important;margin-right:3px
+}
+
+.icon-pdf{
+    background-image: url('../images/icon/doc_pdf.png')!important;margin-right:3px
+}
+
+.icon-imports{
+    background-image: url('../images/icon/import.png')!important;margin-right:2px;width: 22px;height: 22px;
+}
+
+.icon-master{
+    background-image: url('../images/icon/master.png')!important;margin-right:2px;width: 22px;height: 22px;
+}
+
+.icon-drawer{
+    background-image: url('../images/icon/drawer.png')!important;margin-right:3px
+}
+
+.icon-note{
+    background-image: url('../images/icon/note.png')!important;margin-right:3px
+}
+
+.icon-approve{
+    background-image: url('../images/icon/approve.png')!important;margin-right:2px;width: 22px;height: 22px;
+}
+
+.icon-petition{
+    background-image: url('../images/icon/pattition.png')!important;margin-right:2px;width: 22px;height: 22px;
+}
+
+.icon-abort{
+    background-image: url('../images/icon/abort.png')!important;margin-right:3px
+}
+
+.icon-next{
+    background-image: url('../images/icon/doc_page.png')!important;margin-right:3px
+}
+
+.icon-previous{
+    background-image: url('../images/icon/doc_page_previous.png')!important;margin-right:3px
+}
+
+.icon-attach{
+    background-image: url('../images/icon/attach.png')!important;margin-right:3px
+}
+
+.icon-ws{
+    background-image: url('../images/icon/ws.png')!important;margin-right:3px
+}
+
+.icon-sl1005{
+    background-image: url('../images/icon/sl1005.png')!important;margin-right:2px;width: 22px;height: 22px;
+}
+.icon-cal{
+    background-image: url('../images/icon/sl1005.png')!important;margin-right:2px;width: 22px;height: 22px;
+}
+
+.icon-sl1006{
+    background-image: url('../images/icon/sl1006.png')!important;margin-right:2px;width: 22px;height: 22px;
+}
+.icon-sl1006hl{
+    background-image: url('../images/icon/sl1006.png')!important;margin-right:2px;width: 22px;height: 22px;
+}
+.icon-sl1007{
+    background-image: url('../images/icon/sl5002.png')!important;margin-right:2px;width: 22px;height: 22px;
+}
+.icon-sl1008{
+    background-image: url('../images/icon/sl1008.png')!important;margin-right:2px;width: 22px;height: 22px;
+}
+.icon-sl2001{
+    background-image: url('../images/icon/sl2001.png')!important;margin-right:2px;width: 22px;height: 22px;
+}
+.icon-sl2001hl{
+    background-image: url('../images/icon/sl2001.png')!important;margin-right:2px;width: 22px;height: 22px;
+}
+.icon-sl2002{
+    background-image: url('../images/icon/sl2002.png')!important;margin-right:2px;width: 22px;height: 22px;
+}
+.icon-sl2002hl{
+    background-image: url('../images/icon/sl2002.png')!important;margin-right:2px;width: 22px;height: 22px;
+}
+.icon-sl2003{
+    background-image: url('../images/icon/sl2003.png')!important;margin-right:2px;width: 22px;height: 22px;
+}
+.icon-sl2003hl{
+    background-image: url('../images/icon/sl2003hl.png')!important;margin-right:2px;width: 22px;height: 22px;
+}
+.icon-sl2004{
+    background-image: url('../images/icon/sl2004.png')!important;margin-right:2px;width: 22px;height: 22px;
+}
+.icon-sl2004hl{
+    background-image: url('../images/icon/sl2004hl.png')!important;margin-right:2px;width: 22px;height: 22px;
+}
+.icon-sl2005{
+    background-image: url('../images/icon/sl2005.png')!important;margin-right:2px;width: 22px;height: 22px;
+}
+.icon-sl2005hl{
+    background-image: url('../images/icon/sl2005hl.png')!important;margin-right:2px;width: 22px;height: 22px;
+}
+.icon-sl2007{
+    background-image: url('../images/icon/sl2007.png')!important;margin-right:2px;width: 22px;height: 22px;
+}
+.icon-sl2008{
+    background-image: url('../images/icon/sl2008.png')!important;margin-right:2px;width: 22px;height: 22px;
+}
+.icon-sl2010{
+    background-image: url('../images/icon/sl2010.png')!important;margin-right:2px;width: 22px;height: 22px;
+}
+.icon-sl2010hl{
+    background-image: url('../images/icon/sl2010hl.png')!important;margin-right:2px;width: 22px;height: 22px;
+}
+.icon-sl2011{
+    background-image: url('../images/icon/sl2011.png')!important;margin-right:2px;width: 22px;height: 22px;
+}
+.icon-sl2011hl{
+    background-image: url('../images/icon/sl2011hl.png')!important;margin-right:2px;width: 22px;height: 22px;
+}
+.icon-sl2012{
+    background-image: url('../images/icon/sl2012.png')!important;margin-right:2px;width: 22px;height: 22px;
+}
+.icon-sl2012hl{
+    background-image: url('../images/icon/sl2012.png')!important;margin-right:2px;width: 22px;height: 22px;
+}
+.icon-sl3001{
+    background-image: url('../images/icon/sl3001.png')!important;margin-right:2px;width: 22px;height: 22px;
+}
+.icon-sl3002{
+    background-image: url('../images/icon/sl3002.png')!important;margin-right:2px;width: 22px;height: 22px;
+}
+.icon-sl3002hl{
+    background-image: url('../images/icon/sl3002hl.png')!important;margin-right:2px;width: 22px;height: 22px;
+}
+.icon-sl3003{
+    background-image: url('../images/icon/sl3003.png')!important;margin-right:2px;width: 22px;height: 22px;
+}
+.icon-sl3003hl{
+    background-image: url('../images/icon/sl3003hl.png')!important;margin-right:2px;width: 22px;height: 22px;
+}
+.icon-sl3004{
+    background-image: url('../images/icon/sl3004.png')!important;margin-right:2px;width: 22px;height: 22px;
+}
+.icon-sl3005{
+    background-image: url('../images/icon/sl3005.png')!important;margin-right:2px;width: 22px;height: 22px;
+}
+.icon-sl3006{
+    background-image: url('../images/icon/sl3006.png')!important;margin-right:2px;width: 22px;height: 22px;
+}
+.icon-sl3007{
+    background-image: url('../images/icon/sl3007.png')!important;margin-right:2px;width: 22px;height: 22px;
+}
+.icon-sl3008{
+    background-image: url('../images/icon/sl3008.png')!important;margin-right:2px;width: 22px;height: 22px;
+}
+.icon-sl3008hl{
+    background-image: url('../images/icon/sl3008.png')!important;margin-right:2px;width: 22px;height: 22px;
+}
+.icon-sl3009hl{
+    background-image: url('../images/icon/sl3008.png')!important;margin-right:2px;width: 22px;height: 22px;
+}
+.icon-sl5001{
+    background-image: url('../images/icon/sl5001.png')!important;margin-right:2px;width: 22px;height: 22px;
+}
+.icon-sl5002{
+    background-image: url('../images/icon/sl5002.png')!important;margin-right:2px;width: 22px;height: 22px;
+}
+.icon-sl5003{
+    background-image: url('../images/icon/sl5002.png')!important;margin-right:2px;width: 22px;height: 22px;
+}
+.icon-information{
+    background-image: url('../images/icon/information.png')!important;margin-right:2px;
+}
+
+.ui-datatable tr.ui-state-highlight {
+    cursor: pointer;
+}
+.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight {
+    color: green;
+}
+.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight {
+    color: red;
+}
+.ui-widget-content {
+    /*color: blue;*/
+}
+/*.ui-state-hover
+
+, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus 
+{
+    background: green;
+    border: 1px solid #7096AB;
+    box-shadow: 0 0 8px #85B2CB;
+    color: blue;;
+    font-weight: bold;
+}*/
+.ui-picklist .ui-picklist-list {
+    width: 165px;
+    height: 135px;
+}
+.ui-panel .ui-panel-content{
+    padding-top: 1px;
+    /*padding-right: 1px;*/
+    padding-bottom: 1px;
+    padding-left: 2px;
+}
+
+.p-colum1{
+    width: 20%;
+}
+.p-colum2{
+    width: 80%;
+}
+
+.header__cart{position:relative;float:right;min-width:0;height:30px;padding:8px 12px 10px 11px;
+             background:#f37232;border:2px solid #999999;cursor:pointer;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;
+             box-sizing:border-box;-webkit-transition:all .2s ease-out;-moz-transition:all .2s ease-out;-o-transition:all .2s ease-out;
+             transition:all .2s ease-out}
